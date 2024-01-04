@@ -1,13 +1,13 @@
 # typora_image_uploader
 
 <div align="center">
-  <img src="assets/icon.jpg" alt="typora_plugin" width="400" />
+  <img src="assets/icon.jpg" alt="icon" width="400" />
 </div>
 
 
 ## intro
 
-auto upload image to github repository in Typora
+auto upload image in Typora to github repository
 
 ![preview](assets/preview.gif)
 
