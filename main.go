@@ -55,12 +55,12 @@ func uploadImages(ctx context.Context, client *github.Client, images []string) [
 		_path := fmt.Sprintf("image/%d_%d%s", timestamp, idx, suffix)
 		message := strconv.FormatInt(timestamp, 10)
 		options := &github.RepositoryContentFileOptions{Message: &message, Content: data}
-		_, _, err = client.Repositories.CreateFile(ctx, owner, repo, _path, options)
+		commit, _, err := client.Repositories.CreateFile(ctx, owner, repo, _path, options)
 		if err != nil {
 			fmt.Printf("Error committing file %s: %v", image, err)
 			continue
 		}
-		urls[idx] = fmt.Sprintf("https://raw.githubusercontent.com/%s/%s/master/%s", owner, repo, _path)
+		urls[idx] = *commit.Content.DownloadURL
 	}
 	return urls
 }
