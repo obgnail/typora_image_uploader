@@ -1,5 +1,8 @@
 # typora_image_uploader
 
+<div align="center">
+  <img src="assets/icon.jpg" alt="typora_plugin" width="400" />
+</div>
 
 
 ## intro
@@ -21,7 +24,7 @@ auto upload image to github repository in Typora
 4. set `Custom Command` in Typora
 
    ```sh
-   your/path/to/imageUploader.exe -token=your_token -owner=your_github_name -repo=your_repo_name
+   your/path/to/imageUploader_windows_amd64.exe -token=your_token -owner=your_github_name -repo=your_repo_name
    ```
 
 

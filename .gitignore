@@ -1,2 +1,6 @@
 .idea/
 main.exe
+imageUploader_linux_amd64
+imageUploader_macos_amd64
+imageUploader_macos_arm64
+imageUploader_windows_amd64.exe
