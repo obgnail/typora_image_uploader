@@ -31,3 +31,8 @@ jobs:
     - name: list file
       run: ls -lah
 
+    - name: create release
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "imageUploader_windows_amd64.exe,imageUploader_linux_amd64,imageUploader_macos_amd64,imageUploader_macos_arm64"
+        token: ${{ secrets.YOUR_GITHUB_TOKEN }}
