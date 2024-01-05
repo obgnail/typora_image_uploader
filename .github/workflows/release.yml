@@ -1,0 +1,33 @@
+name: Go
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.18'
+
+    - name: Build for Windows
+      run: GOOS=windows GOARCH=amd64 go build -o imageUploader_windows_amd64.exe
+
+    - name: Build for Linux
+      run: GOOS=linux GOARCH=amd64 go build -o imageUploader_linux_amd64
+
+    - name: Build for macOS
+      run: |
+        GOOS=darwin GOARCH=amd64 go build -o imageUploader_macos_amd64
+        GOOS=darwin GOARCH=arm64 go build -o imageUploader_macos_arm64
+    
+    - name: list file
+      run: ls -lah
+
